@@ -50,5 +50,3 @@ urban-parking-management-system/
 └── .gitignore
 ```
 
-## License
-MIT
