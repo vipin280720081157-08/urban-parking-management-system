@@ -1,13 +1,3 @@
-**Student:** [STUDENT NAME]  
-**Institution:** [COLLEGE NAME]
-
-| | |
-|---|---|
-| **EXP No:** | **DEVELOP A SIMPLE GUI BASED DATABASE APPLICATION.** |
-| **DATE:** | |
-
----
-
 ## PROBLEM TITLE:
 
 SmartPark — Urban Parking Management System: a GUI-based database application for managing parking lots, slots, bookings, and payments.

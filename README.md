@@ -48,7 +48,7 @@ Tip: Append `?mode=mock` or `?mode=real` to any page URL to force a mode. The ch
 ### Admin Reports and Analytics
 ![Reports](report/screenshots/09-reports.png)
 
-All screenshots live in `report/screenshots/`. See [SCREENSHOT_GUIDE.md](SCREENSHOT_GUIDE.md) for capture instructions.
+All screenshots live in `report/screenshots/`.
 
 ---
 
@@ -217,8 +217,6 @@ urban-parking-management-system/
 |
 +-- README.md
 +-- SETUP_GUIDE.md
-+-- SCREENSHOT_GUIDE.md
-+-- GITHUB_PUSH_GUIDE.md
 +-- .gitignore
 ```
 
@@ -229,8 +227,6 @@ urban-parking-management-system/
 | Guide | Purpose |
 |-------|---------|
 | [SETUP_GUIDE.md](SETUP_GUIDE.md) | Full local install — Python, PostgreSQL, pgAdmin, Flask |
-| [SCREENSHOT_GUIDE.md](SCREENSHOT_GUIDE.md) | Which screenshots to take and how |
-| [GITHUB_PUSH_GUIDE.md](GITHUB_PUSH_GUIDE.md) | Push to GitHub and enable Pages |
 | [report/SmartPark_Project_Report.md](report/SmartPark_Project_Report.md) | Full project report |
 
 ---
@@ -246,21 +242,3 @@ urban-parking-management-system/
 - Accessible and responsive — dark mode, keyboard focus, mobile-ready
 
 ---
-
-## License
-
-Released under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## Acknowledgements
-
-- Lucide — clean, consistent icon set
-- Chart.js — lightweight charting
-- Inter and JetBrains Mono — typography
-- PostgreSQL — the world's most advanced open-source database
-
----
-
-SmartPark — Smart parking for smart cities.
-```
