@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bill &amp; Payment — SmartPark</title>
+<meta name="description" content="SmartPark - smart urban parking management.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<script>
+(function() {
+    var saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar"></div>
+<main id="main">
+<div class="container"><div class="card invoice" id="invoice"><div class="empty">Loading…</div></div></div>
+</main>
+<footer class="footer"><div class="container"><span>© SmartPark</span><span>v1.0.0</span></div></footer>
+<div class="toast-wrap" aria-live="polite"></div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/bill.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My History — SmartPark</title>
+<meta name="description" content="SmartPark - smart urban parking management.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<script>
+(function() {
+    var saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar"></div>
+<main id="main">
+<div class="container">
+<div class="page-head flex between wrap gap-12"><div><h1>My History</h1><p>Bookings of <strong id="history-owner"></strong></p></div><button class="btn btn-primary" id="btn-rate" type="button"><i data-lucide="star"></i>Rate a Lot</button></div>
+<div class="stat-grid cols-4 mb-16" id="history-stats"></div>
+<div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>Date</th><th>Lot</th><th>Slot</th><th>Duration</th><th>Amount</th><th>Status</th><th>Payment</th><th>Actions</th></tr></thead><tbody id="history-rows"><tr><td colspan="9"><div class="empty">Loading…</div></td></tr></tbody></table></div></div>
+</main>
+<footer class="footer"><div class="container"><span>© SmartPark</span><span>v1.0.0</span></div></footer>
+<div class="toast-wrap" aria-live="polite"></div>
+<div class="modal-overlay" id="review-modal" role="dialog" aria-modal="true" aria-labelledby="review-modal-t"><div class="modal">
+<div class="modal-header"><h3 id="review-modal-t">Rate a parking lot</h3><button class="icon-btn" type="button" data-close-modal="review-modal" aria-label="Close"><i data-lucide="x"></i></button></div>
+<div class="modal-body"><form id="review-form" novalidate><div class="field"><label for="r-lot">Parking lot</label><select class="select" id="r-lot"></select></div>
+<div class="field"><label>Rating</label><div class="star-input" id="r-stars"></div></div>
+<div class="field"><label for="r-comment">Comment (optional)</label><textarea class="textarea" id="r-comment" placeholder="How was your experience?"></textarea></div></form></div>
+<div class="modal-footer"><button class="btn btn-ghost" type="button" data-close-modal="review-modal">Cancel</button><button class="btn btn-primary" id="r-save" type="submit" form="review-form"><i data-lucide="send"></i>Submit review</button></div></div></div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/history.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

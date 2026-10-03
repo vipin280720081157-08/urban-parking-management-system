@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slot Map — SmartPark</title>
+<meta name="description" content="SmartPark - smart urban parking management.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<script>
+(function() {
+    var saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar"></div>
+<main id="main">
+<div class="container"><div class="slots-wrap">
+<div class="slots-head"><div><h1 id="lot-name">Slot Map</h1><p class="text-secondary mb-0" id="lot-sub"></p></div>
+<div class="flex gap-12 wrap" style="align-items:flex-end"><div class="field mb-0" id="vehicle-field"><label for="vehicle-select">Vehicle</label><select class="select" id="vehicle-select"></select></div><div class="floor-tabs" id="floor-tabs"></div></div></div>
+<div class="legend"><span class="chip c-available">Available</span><span class="chip c-occupied">Occupied</span><span class="chip c-maintenance">Maintenance</span><span class="chip c-selected">Selected</span></div>
+<div id="slot-area"><div class="card"><div class="slot-grid" id="slot-grid"><div class="empty">Loading…</div></div><p class="small text-secondary center mt-16 mb-0" id="free-note"></p></div></div>
+</div></div>
+<div class="selection-bar" id="selection-bar"><span>Selected: <strong class="mono" id="selected-label">-</strong></span><div class="flex gap-8"><button class="btn btn-ghost" id="btn-clear" type="button">Clear</button><button class="btn btn-primary" id="btn-confirm" type="button"><i data-lucide="check"></i>Confirm Booking</button></div></div>
+</main>
+<footer class="footer"><div class="container"><span>© SmartPark</span><span>v1.0.0</span></div></footer>
+<div class="toast-wrap" aria-live="polite"></div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/slots.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

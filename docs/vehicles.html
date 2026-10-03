@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Vehicles — SmartPark</title>
+<meta name="description" content="SmartPark - smart urban parking management.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<script>
+(function() {
+    var saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar"></div>
+<main id="main">
+<div class="container">
+<div class="page-head"><h1>My Vehicles</h1><p>Vehicles registered for <strong id="owner-name"></strong></p></div>
+<div class="two-col vehicles">
+<form class="card" id="vehicle-form" novalidate><h3 id="form-title">Add a vehicle</h3><input type="hidden" id="v-id">
+<div class="field"><label for="v-number">Vehicle number</label><input class="input" id="v-number" placeholder="TN-37-AB-1234" autocomplete="off"></div>
+<div class="field"><label for="v-type">Type</label><select class="select" id="v-type"><option value="">Choose type…</option><option value="2W">2W - Two wheeler</option><option value="4W">4W - Four wheeler</option><option value="EV">EV - Electric vehicle</option></select></div>
+<div class="field"><label for="v-model">Model</label><input class="input" id="v-model" placeholder="e.g. Hyundai Creta" autocomplete="off"></div>
+<div class="flex gap-8"><button class="btn btn-primary" id="v-save" type="submit"><i data-lucide="plus"></i> Add vehicle</button><button class="btn btn-ghost hidden" id="v-cancel" type="button">Cancel</button></div></form>
+<div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>Number</th><th>Type</th><th>Model</th><th>Actions</th></tr></thead><tbody id="vehicle-rows"><tr><td colspan="5"><div class="empty">Loading…</div></td></tr></tbody></table></div>
+</div></div>
+</main>
+<footer class="footer"><div class="container"><span>© SmartPark</span><span>v1.0.0</span></div></footer>
+<div class="toast-wrap" aria-live="polite"></div>
+<div class="modal-overlay" id="view-modal" role="dialog" aria-modal="true" aria-labelledby="view-modal-t"><div class="modal">
+<div class="modal-header"><h3 id="view-modal-t">Vehicle details</h3><button class="icon-btn" type="button" data-close-modal="view-modal" aria-label="Close"><i data-lucide="x"></i></button></div>
+<div class="modal-body"><div id="view-body"></div></div>
+<div class="modal-footer"><button class="btn btn-primary" type="button" data-close-modal="view-modal">Close</button></div></div></div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/vehicles.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

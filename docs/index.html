@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — SmartPark</title>
+<meta name="description" content="SmartPark - smart urban parking management.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<script>
+(function() {
+    var saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar"></div>
+<main id="main">
+<div class="container">
+<section class="hero"><h1>SmartPark</h1><p>Smart parking for smart cities. Find a slot, park, pay and track everything in one place.</p><button class="btn btn-primary btn-lg" id="get-started" type="button">Get Started</button></section>
+<div id="mode-note" class="card mb-16 hidden"><span class="small text-secondary">Demo mode: sample data is stored in this browser only.</span> <button class="btn btn-ghost" id="reset-demo" type="button">Reset demo data</button></div>
+<section class="card" id="picker"><h3>Who is parking today?</h3><div class="picker">
+<div class="field"><label for="user-select">User</label><select class="select" id="user-select"><option value="">Loading…</option></select></div>
+<button class="btn btn-primary" id="btn-add-user" type="button"><i data-lucide="plus"></i>Add New User</button>
+<button class="btn btn-secondary" id="btn-edit-user" type="button" disabled><i data-lucide="pencil"></i>Edit</button>
+<button class="btn btn-ghost" id="btn-delete-user" type="button" disabled><i data-lucide="trash-2"></i>Delete</button></div></section>
+<h2 class="section-title">Live overview</h2><div class="stat-grid cols-3" id="stats"><div class="card empty" style="grid-column:1/-1">Loading…</div></div>
+<h2 class="section-title">Modules</h2><div class="module-grid"><a class="card clickable" href="vehicles.html"><div class="stat-icon"><i data-lucide="car"></i></div><h3>My Vehicles</h3><p>Add, edit and choose the vehicle you park.</p></a><a class="card clickable" href="search.html"><div class="stat-icon"><i data-lucide="search"></i></div><h3>Search Parking</h3><p>Find lots by city, vehicle type and duration.</p></a><a class="card clickable" href="slots.html"><div class="stat-icon"><i data-lucide="grid-3x3"></i></div><h3>Slot Map</h3><p>Pick a free slot on a live floor grid.</p></a><a class="card clickable" href="session.html"><div class="stat-icon"><i data-lucide="clock"></i></div><h3>Live Session</h3><p>Watch your timer and running bill.</p></a><a class="card clickable" href="history.html"><div class="stat-icon"><i data-lucide="calendar-check"></i></div><h3>My History</h3><p>Past bookings, bills and reviews.</p></a><a class="card clickable" href="reports.html"><div class="stat-icon"><i data-lucide="bar-chart-3"></i></div><h3>Admin Reports</h3><p>Revenue, peak hours and utilization.</p></a></div></div>
+</main>
+<footer class="footer"><div class="container"><span>© SmartPark</span><span>v1.0.0</span></div></footer>
+<div class="toast-wrap" aria-live="polite"></div>
+<div class="modal-overlay" id="user-modal" role="dialog" aria-modal="true" aria-labelledby="user-modal-t"><div class="modal">
+<div class="modal-header"><h3 id="user-modal-t"><span id="user-modal-title">Add new user</span></h3><button class="icon-btn" type="button" data-close-modal="user-modal" aria-label="Close"><i data-lucide="x"></i></button></div>
+<div class="modal-body"><form id="user-form" novalidate>
+<div class="field"><label for="u-name">Full name</label><input class="input" id="u-name" placeholder="e.g. Meena Raghavan" autocomplete="off"></div>
+<div class="field"><label for="u-email">Email</label><input class="input" id="u-email" type="email" placeholder="name@example.com" autocomplete="off"></div>
+<div class="field"><label for="u-phone">Phone</label><input class="input" id="u-phone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" autocomplete="off"></div>
+<button type="submit" id="u-save-hidden" class="hidden"></button></form></div>
+<div class="modal-footer"><button class="btn btn-ghost" type="button" data-close-modal="user-modal">Cancel</button><button class="btn btn-primary" id="u-save" type="submit" form="user-form"><i data-lucide="save"></i>Save</button></div></div></div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/home.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>
